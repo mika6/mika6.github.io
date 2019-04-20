@@ -50,7 +50,7 @@ menu:
   categories: /categories/
   #about: /about/
   archives: /archives/
-  tags: /tags/
+  # tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
@@ -670,19 +670,19 @@ images: images
 # Theme version
 version: 5.1.2
 
-live2d:
-  enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  log: false
-  model:
-    use: live2d-widget-model-tororo
-  display:
-    position: right
-    width: 150
-    height: 300
-  mobile:
-    show: true
+# live2d:
+  # enable: true
+  # scriptFrom: local
+  # pluginRootPath: live2dw/
+  # pluginJsPath: lib/
+  # pluginModelPath: assets/
+  # tagMode: false
+  # log: false
+  # model:
+  #   use: live2d-widget-model-tororo
+  # display:
+  #   position: right
+  #   width: 150
+  #   height: 300
+  # mobile:
+  #   show: true
