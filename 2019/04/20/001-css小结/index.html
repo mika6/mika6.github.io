@@ -63,10 +63,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.jpg?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ }">
+<meta name="description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ } ID选择器      #list{ } 后代选择器     .list li { }  1.2 【基本选择器扩展】  子元素选择器    #wrap&amp;gt;.inner{} 相邻兄弟选择器   #wrap+.inner{ } 通用兄弟选择器    #list~li{ } 选择器">
 <meta name="keywords" content="flex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css基础知识小结">
-<meta property="og:url" content="http://yoursite.com/2019/04/20/css小结/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/001-css小结/index.html">
 <meta property="og:site_name" content="Mika">
-<meta property="og:description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ }">
+<meta property="og:description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ } ID选择器      #list{ } 后代选择器     .list li { }  1.2 【基本选择器扩展】  子元素选择器    #wrap&amp;gt;.inner{} 相邻兄弟选择器   #wrap+.inner{ } 通用兄弟选择器    #list~li{ } 选择器">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1553608517218.png">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1553608546378.png">
-<meta property="og:updated_time" content="2019-04-20T10:14:54.901Z">
+<meta property="og:updated_time" content="2019-04-20T14:56:20.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css基础知识小结">
-<meta name="twitter:description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ }">
+<meta name="twitter:description" content="选择器1.1 【基本选择器】  通配符 *{ } 元素选择器     body{ } 类选择器     .list{ } ID选择器      #list{ } 后代选择器     .list li { }  1.2 【基本选择器扩展】  子元素选择器    #wrap&amp;gt;.inner{} 相邻兄弟选择器   #wrap+.inner{ } 通用兄弟选择器    #list~li{ } 选择器">
 <meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1553608517218.png">
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/20/css小结/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/20/001-css小结/">
 
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/css小结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/001-css小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mika">
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/20/css小结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/css小结/" itemprop="commentCount"></span>
+                <a href="/2019/04/20/001-css小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/001-css小结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,7 +434,7 @@
 <ul>
 <li>通配符 <strong>*{ }</strong></li>
 <li>元素选择器     <strong>body{ }</strong></li>
-<li>类选择器     <strong>.list{ }</strong><a id="more"></a></li>
+<li>类选择器     <strong>.list{ }</strong></li>
 <li>ID选择器      <strong>#list{ }</strong></li>
 <li>后代选择器     <strong>.list li { }</strong></li>
 </ul>
@@ -1117,18 +1117,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/20/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/20/002-undefined与null/" rel="prev" title="undefined与null">
+                undefined与null <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1217,7 +1213,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1228,7 +1224,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1239,7 +1235,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

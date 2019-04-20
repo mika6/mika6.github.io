@@ -63,10 +63,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.jpg?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="mika">
+  <meta name="keywords" content="this,">
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="前端之路~ on the way">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mika">
-<meta property="og:url" content="http://yoursite.com/tags/JS/index.html">
+<meta name="description" content="在全局环境下，this始终指向全局对象（window），无论严格与否  函数上下文调用  函数直接调用 非严格模式：this指向全局对象window 严格模式：this为undefined   对象中的this 函数的定义位置不影响其this指向，this指向只和调用函数的对象有关。 多层嵌套的对象，内部方法的this指向离被调用函数最近的对象（window也是对象，其内部对象调用方法的this">
+<meta name="keywords" content="this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="006-this指向小结">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/006-this指向小结/index.html">
 <meta property="og:site_name" content="Mika">
-<meta property="og:description" content="前端之路~ on the way">
+<meta property="og:description" content="在全局环境下，this始终指向全局对象（window），无论严格与否  函数上下文调用  函数直接调用 非严格模式：this指向全局对象window 严格模式：this为undefined   对象中的this 函数的定义位置不影响其this指向，this指向只和调用函数的对象有关。 多层嵌套的对象，内部方法的this指向离被调用函数最近的对象（window也是对象，其内部对象调用方法的this">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-20T14:58:49.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mika">
-<meta name="twitter:description" content="前端之路~ on the way">
+<meta name="twitter:title" content="006-this指向小结">
+<meta name="twitter:description" content="在全局环境下，this始终指向全局对象（window），无论严格与否  函数上下文调用  函数直接调用 非严格模式：this指向全局对象window 严格模式：this为undefined   对象中的this 函数的定义位置不影响其this指向，this指向只和调用函数的对象有关。 多层嵌套的对象，内部方法的this指向离被调用函数最近的对象（window也是对象，其内部对象调用方法的this">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/JS/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/20/006-this指向小结/">
 
 
 
 
 
-  <title>标签: JS | Mika</title>
+  <title>006-this指向小结 | Mika</title>
   
 
 
@@ -150,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,52 +278,258 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JS<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/006-this指向小结/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mika">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar-1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mika">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/04/20/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">006-this指向小结</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-20T18:14:54+08:00" content="2019-04-20">
-          04-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T22:57:56+08:00">
+                2019-04-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/20/006-this指向小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/006-this指向小结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读<i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  721
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><p>在<strong>全局环境下</strong>，this始终指向全局对象（window），无论严格与否</p>
+</li>
+<li><p><strong>函数上下文调用</strong></p>
+<ul>
+<li>函数直接调用<ul>
+<li>非严格模式：this指向全局对象window</li>
+<li>严格模式：this为undefined</li>
+</ul>
+</li>
+<li>对象中的this<ul>
+<li>函数的定义位置不影响其this指向，this指向只和调用函数的对象有关。</li>
+<li>多层嵌套的对象，内部方法的this指向离被调用函数最近的对象（window也是对象，其内部对象调用方法的this指向内部对象， 而非window）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>原型链中的this</strong>，指向调用它的对象（谁调用指向谁），以上对于函数作为getter &amp; setter 调用时同样适用。</li>
+<li><strong>构造函数中</strong>，构造函数中的this与被创建的新对象绑定。<ul>
+<li>注意：当构造器返回的默认值是一个this引用的对象时，可以手动设置返回其他的对象，如果返回值不是一个对象，返回this。</li>
+</ul>
+</li>
+<li><strong>call&amp;apply</strong><ul>
+<li>当函数通过Function对象的原型中继承的方法 call() 和 apply() 方法调用时， 其函数内部的this值可绑定到 call() &amp; apply() 方法指定的第一个对象上， 如果第一个参数不是对象，JavaScript内部会尝试将其转换成对象然后指向它。</li>
+</ul>
+</li>
+<li><strong>bind</strong><ul>
+<li>bind方法在ES5引入， 在Function的原型链上， <code>Function.prototype.bind</code>。<strong>通过bind方法绑定后， 函数将被永远绑定在其第一个参数对象上， 而无论其在什么情况下被调用。</strong></li>
+</ul>
+</li>
+<li><strong>DOM事件处理函数中的this &amp; 内联事件中的this</strong><ul>
+<li>DOM事件处理函数：当函数被当做监听事件处理函数时，其this指向触发该事件的元素（针对addEvenetListener）</li>
+<li>内联事件<ul>
+<li>当代码被内联处理函数调用时，它的this指向监听器所在元素</li>
+<li>当代码被包括在函数内部执行时，其this指向等同于<strong>函数直接调用</strong>的情况，<ul>
+<li>在非严格模式下指向全局对象window</li>
+<li>在严格模式下指向undefined</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>setTineout&amp;setInterval</strong><ul>
+<li>对于延时函数内部的回调函数的this指向全局对象window（当然我们可以通过bind方法改变其内部函数的this指向）</li>
+</ul>
+</li>
+<li><strong>箭头函数中的this</strong><ul>
+<li>由于箭头函数不绑定this， 它会捕获其所在（即定义的位置）上下文的this值， 作为自己的this值，</li>
+<li>所以 call() / apply() / bind() 方法对于箭头函数来说只是传入参数，对它的 this 毫无影响。</li>
+<li>考虑到 this 是词法层面上的，严格模式中与 this 相关的规则都将被忽略。（可以忽略是否在严格模式下的影响）</li>
+<li>作为方法的箭头函数this指向全局window对象，而普通函数则指向调用它的对象</li>
+</ul>
+</li>
+</ul>
+<p>参考：<a href="https://www.cnblogs.com/dongcanliang/p/7054176.html" target="_blank" rel="noopener">https://www.cnblogs.com/dongcanliang/p/7054176.html</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/this/" rel="tag"><i class="fa f-fw fa-tags"></i> this</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/20/004-全等、双等与Object-is/" rel="next" title="== & === & Object.is()">
+                <i class="fa fa-chevron-left"></i> == & === & Object.is()
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/20/008-mongoose操作mongoDB笔记/" rel="prev" title="mongoose操作mongoDB笔记">
+                mongoose操作mongoDB笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -329,6 +537,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -367,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -378,7 +593,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -389,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -584,6 +799,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

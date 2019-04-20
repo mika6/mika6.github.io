@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="canvas,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="总结一些基础知识 画一条直线 moveTo设置起点，lineTo设置下一坐标 123456789101112131415161718192021&amp;lt;canvas id=&quot;canvas&quot;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;lt;script&amp;gt;    window.onload = function () &amp;#123;        var canvas = document.getEl">
+<meta name="keywords" content="canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas基础知识小结">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/007-canvas基础知识小结/index.html">
+<meta property="og:site_name" content="Mika">
+<meta property="og:description" content="总结一些基础知识 画一条直线 moveTo设置起点，lineTo设置下一坐标 123456789101112131415161718192021&amp;lt;canvas id=&quot;canvas&quot;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;lt;script&amp;gt;    window.onload = function () &amp;#123;        var canvas = document.getEl">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10160199-ca6461aadbd0f94d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240#pic_center">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10160199-0f3f6663a8d8a41c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240#pic_center">
+<meta property="og:updated_time" content="2019-04-20T15:14:03.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas基础知识小结">
+<meta name="twitter:description" content="总结一些基础知识 画一条直线 moveTo设置起点，lineTo设置下一坐标 123456789101112131415161718192021&amp;lt;canvas id=&quot;canvas&quot;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;lt;script&amp;gt;    window.onload = function () &amp;#123;        var canvas = document.getEl">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/10160199-ca6461aadbd0f94d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240#pic_center">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":"ture","scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/20/007-canvas基础知识小结/">
+
+
+
+
+
+  <title>canvas基础知识小结 | Mika</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mika</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/007-canvas基础知识小结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mika">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar-1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mika">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">canvas基础知识小结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T23:07:54+08:00">
+                2019-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/20/007-canvas基础知识小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/007-canvas基础知识小结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读<i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>总结一些基础知识</p>
+<h1 id="画一条直线"><a href="#画一条直线" class="headerlink" title="画一条直线"></a>画一条直线</h1><ul>
+<li><p>moveTo设置起点，lineTo设置下一坐标</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 设置状态</span></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="javascript">        context.moveTo(<span class="number">100</span>, <span class="number">100</span>);<span class="comment">// 起点</span></span></span><br><span class="line"><span class="javascript">        context.lineTo(<span class="number">700</span>, <span class="number">700</span>);<span class="comment">// 下一点坐标</span></span></span><br><span class="line"><span class="undefined">        context.closePath();</span></span><br><span class="line"><span class="javascript">        context.lineWidth = <span class="number">10</span>;<span class="comment">// 线宽</span></span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"#0f0"</span>;<span class="comment">// 颜色</span></span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="javascript">        <span class="comment">// 绘制</span></span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>lineCap属性 - 设置线段起始位置的样式，取值如下<br>butt:(default)默认值<br>round:圆头<br>square:方头</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.lineWidth = 30;</span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"tomato"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(100, 100);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 100);</span></span><br><span class="line"><span class="javascript">        context.lineCap = <span class="string">"butt"</span>;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(100, 200);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 200);</span></span><br><span class="line"><span class="javascript">        context.lineCap = <span class="string">"round"</span>;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(100, 300);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 300);</span></span><br><span class="line"><span class="javascript">        context.lineCap = <span class="string">"square"</span>;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 辅助线</span></span></span><br><span class="line"><span class="undefined">        context.lineWidth = 1;</span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(100, 50);</span></span><br><span class="line"><span class="undefined">        context.lineTo(100, 350);</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(400, 50);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 350);</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/10160199-ca6461aadbd0f94d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240#pic_center" alt="lineCap"></p>
+<ul>
+<li>lineJoin属性- 两条直线相交处的样式，可取值如下：<br>miter：(default)，尖角，miterLimit 默认值10,控制尖角的长度，只有设置miter时生效。<br>bevel：斜接<br>round: 圆角<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.lineWidth = 50;</span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"tomato"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(300, 300);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 100);</span></span><br><span class="line"><span class="undefined">        context.lineTo(500, 300);</span></span><br><span class="line"><span class="javascript">        context.lineJoin = <span class="string">"miter"</span>;</span></span><br><span class="line"><span class="undefined">        context.miterLimit = 10;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(300, 500);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 300);</span></span><br><span class="line"><span class="undefined">        context.lineTo(500, 500);</span></span><br><span class="line"><span class="javascript">        context.lineJoin = <span class="string">"bevel"</span>;</span></span><br><span class="line"><span class="undefined">        context.miterLimit = 10;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(300, 700);</span></span><br><span class="line"><span class="undefined">        context.lineTo(400, 500);</span></span><br><span class="line"><span class="undefined">        context.lineTo(500, 700);</span></span><br><span class="line"><span class="javascript">        context.lineJoin = <span class="string">"round"</span>;</span></span><br><span class="line"><span class="undefined">        context.miterLimit = 10;</span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>示意图如下：<br><img src="https://upload-images.jianshu.io/upload_images/10160199-0f3f6663a8d8a41c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240#pic_center" alt="lineJoin"></p>
+<h1 id="画一个矩形"><a href="#画一个矩形" class="headerlink" title="画一个矩形"></a>画一个矩形</h1><p>(1).直接使用连线的方式画出矩形。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined">        context.beginPath();</span></span><br><span class="line"><span class="undefined">        context.moveTo(100, 100);</span></span><br><span class="line"><span class="undefined">        context.lineTo(600, 100);</span></span><br><span class="line"><span class="undefined">        context.lineTo(600, 600);</span></span><br><span class="line"><span class="undefined">        context.lineTo(100, 600);</span></span><br><span class="line"><span class="javascript">        context.lineTo(<span class="number">100</span>, <span class="number">100</span>);<span class="comment">//可以省略，closePath()会自动封闭图形</span></span></span><br><span class="line"><span class="undefined">        context.closePath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.lineWidth = 10;</span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"#0f0"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.stroke();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>(2).使用context.rect(x, y, width, height)规划路径，这里只规划路径，不会绘制。<br>context.fillRect(x, y, width, height), context.strokeRect(x, y, width, height)不但规划路径，还将矩形直接绘制出来。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        drawRect(context, <span class="number">100</span>, <span class="number">100</span>, <span class="number">300</span>, <span class="number">200</span>, <span class="number">5</span>, <span class="string">"blue"</span>, <span class="string">"red"</span>);</span></span><br><span class="line"><span class="javascript">        drawRect2(context, <span class="number">250</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">200</span>, <span class="number">5</span>, <span class="string">"blue"</span>, <span class="string">"rgba(0, 255, 0, 0.5)"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">drawRect</span>(<span class="params">cxt, x, y, width, height, borderWidth, borderColor, fillColor</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        cxt.beginPath();</span></span><br><span class="line"><span class="javascript">        cxt.rect(x,y, width, height); <span class="comment">// 规划路径</span></span></span><br><span class="line"><span class="undefined">        cxt.closePath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        cxt.lineWidth = borderWidth;</span></span><br><span class="line"><span class="undefined">        cxt.fillStyle = fillColor;</span></span><br><span class="line"><span class="undefined">        cxt.strokeStyle = borderColor;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        cxt.fill();</span></span><br><span class="line"><span class="undefined">        cxt.stroke();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">drawRect2</span>(<span class="params">cxt, x, y, width, height, borderWidth, borderColor, fillColor</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        cxt.lineWidth = borderWidth;</span></span><br><span class="line"><span class="undefined">        cxt.fillStyle = fillColor;</span></span><br><span class="line"><span class="undefined">        cxt.strokeStyle = borderColor;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        cxt.fillRect(x, y, width, height); <span class="comment">// 填充</span></span></span><br><span class="line"><span class="undefined">        cxt.strokeRect(x, y, width, height);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>fillStyle, strokeStyle 可取颜色值如下：<br>#ffffff   、#fff、<br>rgb(255, 255, 100)、rgba(100, 100, 100, 0.8)、<br>hsl(20, 62%, 28%)、 hsla(30, 82%, 45%, 0.6)、<br>red</p>
+<h1 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h1><ul>
+<li>位移：translate(x, y)</li>
+<li>旋转：rotate(deg)</li>
+<li>缩放：scale(sx, sy) , sx - x方向缩放倍数，sy - y方向缩放倍数。</li>
+<li>变换矩阵<br>a  c   e    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;    a - 水平缩放(1) ;&#160;&#160;    b - 水平倾斜(0)<br>b  d   f   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; c - 垂直倾斜(0) ;&#160;&#160;   d - 垂直缩放(1)<br>0  0  1   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;   e - 水平位移(0);&#160;&#160;    f - 垂直位移(0)</li>
+<li>设置变换矩阵：<br>transform(a, b, c, d, e, f)<br>setTransform(a, b, c, d, e, f) 设置变换后的默认值</li>
+<li>canvas状态的保存与恢复<br>context.save();<br>context.restore();<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.save();</span></span><br><span class="line"><span class="javascript">        context.fillStyle = <span class="string">"red"</span>;</span></span><br><span class="line"><span class="undefined">        context.translate(100, 100);</span></span><br><span class="line"><span class="undefined">        context.fillRect(0, 0, 400, 400);</span></span><br><span class="line"><span class="undefined">        context.restore();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.save();</span></span><br><span class="line"><span class="javascript">        context.fillStyle = <span class="string">"green"</span>;</span></span><br><span class="line"><span class="undefined">        context.translate(300, 300);</span></span><br><span class="line"><span class="undefined">        context.fillRect(0, 0, 400, 400);</span></span><br><span class="line"><span class="undefined">        context.restore();</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.fillStyle = <span class="string">"#000"</span>;</span></span><br><span class="line"><span class="undefined">        context.fillRect(0, 0, canvas.width, canvas.height);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> r = <span class="built_in">Math</span>.random()*<span class="number">10</span>+<span class="number">10</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> x = <span class="built_in">Math</span>.random()*canvas.width;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> y = <span class="built_in">Math</span>.random()*canvas.height;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> a = <span class="built_in">Math</span>.random()*<span class="number">360</span>;</span></span><br><span class="line"><span class="undefined">            drawStar(context, x, y, r, a)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">drawStar</span>(<span class="params">cxt, x, y, R, rot</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> rot = rot || <span class="number">0</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        cxt.fillStyle = <span class="string">"#fb3"</span>;</span></span><br><span class="line"><span class="javascript">        cxt.strokeStyle = <span class="string">"#fd5"</span>;</span></span><br><span class="line"><span class="undefined">        cxt.lineWidth = 3;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        cxt.save();</span></span><br><span class="line"><span class="undefined">        cxt.transform(R, 0, 0, R, x, y);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// cxt.translate(x, y);</span></span></span><br><span class="line"><span class="javascript">        cxt.rotate(rot/<span class="number">180</span>*<span class="built_in">Math</span>.PI);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// cxt.scale(R, R);</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        starPath(cxt);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        cxt.fill();</span></span><br><span class="line"><span class="undefined">        cxt.stroke();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        cxt.restore();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">starPath</span>(<span class="params">cxt</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        cxt.beginPath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i ++)&#123;</span></span><br><span class="line"><span class="javascript">            cxt.lineTo(<span class="built_in">Math</span>.cos((<span class="number">18</span> + i*<span class="number">72</span> ) / <span class="number">180</span> * <span class="built_in">Math</span>.PI),</span></span><br><span class="line"><span class="javascript">                -<span class="built_in">Math</span>.sin((<span class="number">18</span> + i*<span class="number">72</span>) / <span class="number">180</span> * <span class="built_in">Math</span>.PI) );</span></span><br><span class="line"><span class="javascript">            cxt.lineTo(<span class="built_in">Math</span>.cos((<span class="number">54</span> + i*<span class="number">72</span>) / <span class="number">180</span> * <span class="built_in">Math</span>.PI) * <span class="number">0.5</span>,</span></span><br><span class="line"><span class="javascript">                -<span class="built_in">Math</span>.sin((<span class="number">54</span> + i*<span class="number">72</span> ) / <span class="number">180</span> * <span class="built_in">Math</span>.PI) * <span class="number">0.5</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        cxt.setTransform(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);<span class="comment">//清除上一次的影响</span></span></span><br><span class="line"><span class="undefined">        cxt.closePath();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="fillStyle-线性渐变-amp-径向渐变"><a href="#fillStyle-线性渐变-amp-径向渐变" class="headerlink" title="fillStyle - 线性渐变&amp;径向渐变"></a>fillStyle - 线性渐变&amp;径向渐变</h1><ul>
+<li><p>线性渐变<br>  //step1<br>  var grd = context.createLinearGradient(xstart, ystart, xend, yend);<br>  //step2<br>  grd.addColorStop(stop, color);</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> linearGrad = context.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">800</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.0</span>, <span class="string">'white'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.25</span>, <span class="string">'yellow'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.5</span>, <span class="string">'green'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.75</span>, <span class="string">'blue'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">1.0</span>, <span class="string">'black'</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.fillStyle = linearGrad;</span></span><br><span class="line"><span class="undefined">        context.fillRect(0, 0, 800, 800);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>径向渐变<br>  //step1<br>  var grd = context.createRadialGradient(x0, y0, r0, x1, y1, r1);<br>  //step2<br>  grd.addColorStop(stop, color);</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> linearGrad = context.createRadialGradient(<span class="number">400</span>, <span class="number">400</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">400</span>, <span class="number">400</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.0</span>, <span class="string">'white'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.25</span>, <span class="string">'yellow'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.5</span>, <span class="string">'green'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.75</span>, <span class="string">'blue'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">1.0</span>, <span class="string">'black'</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.fillStyle = linearGrad;</span></span><br><span class="line"><span class="undefined">        context.fillRect(0, 0, 800, 800);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-createPattern"><a href="#5-createPattern" class="headerlink" title="5. createPattern"></a>5. createPattern</h2><ul>
+<li>createPattern(img, repeat-style)<br>repeat-style:no-repeat; repeat-x; repeat-y; repeat</li>
+<li>createPattern(canvas, repeat-style)</li>
+<li>createPattern(video, repeat-style)</li>
+</ul>
+<h1 id="曲线绘制"><a href="#曲线绘制" class="headerlink" title="曲线绘制"></a>曲线绘制</h1><h2 id="圆或圆弧"><a href="#圆或圆弧" class="headerlink" title="圆或圆弧"></a>圆或圆弧</h2><p>context.arc(context, center, radius, startingAngle, endingAngle, anticlockwiae)<br>anticlockwiae = false 顺时针<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 1024;</span></span><br><span class="line"><span class="undefined">        canvas.height = 768;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.lineWidth = 2;</span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"#058"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">60</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>);</span></span><br><span class="line"><span class="javascript">            context.closePath();<span class="comment">//会自动闭合</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.stroke()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">180</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.stroke()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">300</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">            context.closePath();<span class="comment">//会自动闭合</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.stroke()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">420</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.stroke()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.fillStyle = <span class="string">"#0f0"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">540</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">            context.closePath();<span class="comment">//会自动闭合</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.fill()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++)&#123;</span></span><br><span class="line"><span class="undefined">            context.beginPath();</span></span><br><span class="line"><span class="javascript">            context.arc(<span class="number">50</span> + i*<span class="number">100</span>, <span class="number">660</span>, <span class="number">40</span>, <span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI*(i+<span class="number">1</span>)/<span class="number">10</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            context.fill()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="arcTo"><a href="#arcTo" class="headerlink" title="arcTo"></a>arcTo</h2><p>context.arcTo(x1, y1, x2, y2, radius)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 1800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 1800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined">        context.moveTo(400,100)</span></span><br><span class="line"><span class="undefined">        context.arcTo(1200,400,400,700,400);</span></span><br><span class="line"><span class="javascript">        context.strokeStyle= <span class="string">"red"</span></span></span><br><span class="line"><span class="undefined">        context.stroke()</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="贝赛尔曲线-Bezier"><a href="#贝赛尔曲线-Bezier" class="headerlink" title="贝赛尔曲线 Bezier"></a>贝赛尔曲线 Bezier</h2><p>（1）QuadraticCurveTo(二次)<br>context.moveTo(x0, y0); //初始点<br>contextquadraticCurveTo(x1, y1, x2, y2)//控制点、结束点<br>（2）BezierCurveTo(三次)<br>context.moveTo(x0, y0);<br>context.bezierCurveTo(x1, y1, x2, y2, x3, y3);<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawLand</span>(<span class="params">cxt</span>)</span>&#123;</span><br><span class="line">    cxt.save();</span><br><span class="line"></span><br><span class="line">    cxt.beginPath();</span><br><span class="line">    cxt.moveTo(<span class="number">0</span>, <span class="number">600</span>);</span><br><span class="line">    cxt.bezierCurveTo(<span class="number">540</span>, <span class="number">400</span>, <span class="number">660</span>, <span class="number">800</span>, <span class="number">1200</span>, <span class="number">600</span>);</span><br><span class="line">    cxt.lineTo(<span class="number">1200</span>, <span class="number">800</span>);</span><br><span class="line">    cxt.lineTo(<span class="number">0</span>, <span class="number">800</span>);</span><br><span class="line">    cxt.closePath();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> lanStyle = cxt.createLinearGradient(<span class="number">0</span>, <span class="number">800</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    lanStyle.addColorStop(<span class="number">0.0</span>, <span class="string">"#030"</span>);</span><br><span class="line">    lanStyle.addColorStop(<span class="number">1.0</span>, <span class="string">"#580"</span>);</span><br><span class="line">    cxt.fillStyle = lanStyle;</span><br><span class="line"></span><br><span class="line">    cxt.fill();</span><br><span class="line"></span><br><span class="line">    cxt.restore();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="文字渲染基础"><a href="#文字渲染基础" class="headerlink" title="文字渲染基础"></a>文字渲染基础</h1><p>context.font = “bold 40px Arial”;<br>context.fillText(String, x, y, [maxlen]);<br>context.StrokeText(String, x, y, [maclen])<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.font = <span class="string">"bold 40px Arial"</span>;</span></span><br><span class="line"><span class="javascript">        context.fillStyle = <span class="string">"#058"</span>;</span></span><br><span class="line"><span class="javascript">        context.fillText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">100</span>);</span></span><br><span class="line"><span class="undefined">        context.lineWidth = 1;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"#058"</span>;</span></span><br><span class="line"><span class="javascript">        context.strokeText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">200</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.fillText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">300</span>, <span class="number">400</span>);</span></span><br><span class="line"><span class="javascript">        context.strokeText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">400</span>, <span class="number">400</span>);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><p>默认值”20px sans-serif”<br>（1）font-style:<br>normal(default);<br>italic(斜体字);<br>oblique(倾斜字体)<br>（2）font-variant:<br>normal;<br>small-caps(以小型形式显示大写字母)<br>（3）font-weight:<br>lighter;<br>normal;<br>bold;<br>bolder;<br>100,200,300,400(normal),500,600,700(bold),800,900<br>（4）font-size:<br>20px;<br>2em;<br>150%;<br>（5）font-family:<br>设置多种字体备选；<br>支持@font-face<br>web安全字体<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        canvas.width = 800;</span></span><br><span class="line"><span class="undefined">        canvas.height = 800;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.font = <span class="string">"bold 40px Arial"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> linearGrad = context.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">700</span>, <span class="number">0</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.0</span>, <span class="string">'tomato'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.25</span>, <span class="string">'yellow'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.5</span>, <span class="string">'green'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">0.75</span>, <span class="string">'pink'</span>);</span></span><br><span class="line"><span class="javascript">        linearGrad.addColorStop(<span class="number">1.0</span>, <span class="string">'red'</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        context.fillStyle = linearGrad;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// context.fillStyle = "#058";</span></span></span><br><span class="line"><span class="javascript">        context.fillText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">100</span>);</span></span><br><span class="line"><span class="undefined">        context.lineWidth = 1;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.strokeStyle = <span class="string">"#058"</span>;</span></span><br><span class="line"><span class="javascript">        context.strokeText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">200</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        context.fillText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">300</span>, <span class="number">400</span>);</span></span><br><span class="line"><span class="javascript">        context.strokeText(<span class="string">"欢迎学习Canvas！欢迎学习Canvas！"</span>, <span class="number">40</span>, <span class="number">400</span>, <span class="number">400</span>);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="文本对齐"><a href="#文本对齐" class="headerlink" title="文本对齐"></a>文本对齐</h2><p>context.textAlign = left/center/right<br>cotext.textBaseline = top/middle/bottom  (alphabetic拉丁/ideographic汉，日/hanging印)</p>
+<ul>
+<li><h4 id="文本度量"><a href="#文本度量" class="headerlink" title="文本度量"></a>文本度量</h4>context.measureText(String).width</li>
+</ul>
+<h1 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h1><p>context.shadowColor;<br>context.shadowOffsetX;//x位移值<br>context.shadowOffsetY;//y位移值<br>xontext.shadowBlur; //模糊值</p>
+<h1 id="global"><a href="#global" class="headerlink" title="global"></a>global</h1><ul>
+<li>globalAlpha = 1(default)  //使全局具有透明度</li>
+<li>glibalCompositeOperation//绘制的图像在重叠时产生的效果<br>“sourece-over” -  后绘制的图像在先绘制的图形上面<br>“destination-over” - 先绘制的图形在后悔值的上面<br>·······················································································<br>source-over<br>source-atop<br>source-in<br>source-out<br>·················································································<br>destination-over<br>destination-atop<br>destination-in<br>destination-out<br>·················································································<br>lighter<br>copy<br>xor</li>
+</ul>
+<h1 id="剪辑区域"><a href="#剪辑区域" class="headerlink" title="剪辑区域"></a>剪辑区域</h1><p>context.clip();</p>
+<h1 id="剪纸效果"><a href="#剪纸效果" class="headerlink" title="剪纸效果"></a>剪纸效果</h1><p>非零环绕原则</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li>clearRect<br>context.clearRect(x, y, width, height)</li>
+<li>isPointInPath<br>context.isPointInPath(x, y)<br>var x = event.clientX - canvas.getBoundingClientRect().left<br>var y = event.clientY - canvas.getBoundingClientRect().Right</li>
+</ul>
+<h1 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h1><p>explorecanvas <a href="https://code.google.con/p/explorecanvas/" target="_blank" rel="noopener">https://code.google.con/p/explorecanvas/</a><br>canvas 图形库：canvasplus/ArtisanJS/Rgraph</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/canvas/" rel="tag"><i class="fa f-fw fa-tags"></i> canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/20/008-mongoose操作mongoDB笔记/" rel="next" title="mongoose操作mongoDB笔记">
+                <i class="fa fa-chevron-left"></i> mongoose操作mongoDB笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/20/009-文本溢出&内容溢出/" rel="prev" title="文本溢出&内容溢出">
+                文本溢出&内容溢出 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar-1.jpg" alt="mika">
+            
+              <p class="site-author-name" itemprop="name">mika</p>
+              <p class="site-description motion-element" itemprop="description">前端之路~ on the way</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/mika6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#画一条直线"><span class="nav-number">1.</span> <span class="nav-text">画一条直线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#画一个矩形"><span class="nav-number">2.</span> <span class="nav-text">画一个矩形</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图形变换"><span class="nav-number">3.</span> <span class="nav-text">图形变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fillStyle-线性渐变-amp-径向渐变"><span class="nav-number">4.</span> <span class="nav-text">fillStyle - 线性渐变&amp;径向渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-createPattern"><span class="nav-number">4.1.</span> <span class="nav-text">5. createPattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#曲线绘制"><span class="nav-number">5.</span> <span class="nav-text">曲线绘制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#圆或圆弧"><span class="nav-number">5.1.</span> <span class="nav-text">圆或圆弧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arcTo"><span class="nav-number">5.2.</span> <span class="nav-text">arcTo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贝赛尔曲线-Bezier"><span class="nav-number">5.3.</span> <span class="nav-text">贝赛尔曲线 Bezier</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文字渲染基础"><span class="nav-number">6.</span> <span class="nav-text">文字渲染基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#font"><span class="nav-number">6.1.</span> <span class="nav-text">font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本对齐"><span class="nav-number">6.2.</span> <span class="nav-text">文本对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文本度量"><span class="nav-number">6.2.0.1.</span> <span class="nav-text">文本度量</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#阴影"><span class="nav-number">7.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#global"><span class="nav-number">8.</span> <span class="nav-text">global</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪辑区域"><span class="nav-number">9.</span> <span class="nav-text">剪辑区域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪纸效果"><span class="nav-number">10.</span> <span class="nav-text">剪纸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">11.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#兼容性"><span class="nav-number">12.</span> <span class="nav-text">兼容性</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mika</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数<i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量<i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'LHforOhgTiORtGLUJNLjNMir-gzGzoHsz',
+        appKey: 'v8m5y0b3jk8gAFiUGHtkOjlE',
+        placeholder: '代码撸起来!~ o(*￣▽￣*)ブ',
+        avatar:'robohash',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

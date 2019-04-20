@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9aff01;
+  background: #ffff52;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3116,4 +3116,20 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("/images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.site-meta {
+  background: $black;
+}
+* {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
+}
+:active {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
 }
