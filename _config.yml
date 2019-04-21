@@ -5,7 +5,7 @@
 # Site
 title: Mika
 subtitle:
-description:
+description: 前端之路~ on the way
 keywords:
 author: mika
 language: zh-Hans
@@ -59,18 +59,17 @@ category_map:
   JS
   CSS
   HTML
-  VUE
+  vue
+  node
+  MongoDB
   网络基础
   浏览器知识
 tag_map:
   跨域
   http
-  VUE
+  vue
   flex
-  animation
-  CSS选择器
-  transition
-  transform
+  数据库
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
