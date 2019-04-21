@@ -1,5 +1,5 @@
 ---
-title: 006-this指向小结
+title: this指向小结
 date: 2019-04-20 22:57:56
 tags: this
 ---
