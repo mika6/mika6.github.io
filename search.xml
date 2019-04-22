@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-17 电话号码的字母组合]]></title>
+    <url>%2F2019%2F04%2F21%2Falgorithm-001-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。 示例:12输入：&quot;23&quot;输出：[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]. 说明:尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。 问题分析需要根据输入的数字映射到对应的字母，根据输入的数字对进行组合：思路一：循环嵌套思路二：两两组合，然后递归 代码123456789101112131415161718192021222324252627282930313233343536 let phonenum = (str) =&gt; &#123; // 1 建立电话号码键盘映射 let map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mon', 'pqrs','tuv', 'wxyz'] // 234 =&gt; [2,3,4] let num = str.split('') // 2 保存映射后的内容 23 =&gt; ['abc', 'def'] let code = [] num.forEach(item=&gt;&#123; if(map[item])&#123; code.push(map[item]) &#125; &#125;) // 3. 进行组合 let comb = (arr) =&gt; &#123; // 临时变量用来保存前两项组合的结果 let temp = [] for(let i=0, il = arr[0].length; i&lt;il; i++)&#123; for(let j=0,jl=arr[1].length; j&lt;jl; j++)&#123; temp.push(`$&#123;arr[0][i]&#125;$&#123;arr[1][j]&#125;`) &#125; &#125; arr.splice(0, 2, temp) if(arr.length&gt;1)&#123; comb(arr) &#125;else&#123; return temp &#125; return arr[0] &#125; // 4.调用并返回结果 return comb(code)&#125;//测试phonenum('345')// ["dgj", "dgk", "dgl", "dhj", "dhk", "dhl", "dij", "dik", "dil", "egj", "egk", "egl", "ehj", "ehk", "ehl", "eij", "eik", "eil", "fgj", "fgk", "fgl", "fhj", "fhk", "fhl", "fij", "fik", "fil"]]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一些坑]]></title>
     <url>%2F2019%2F04%2F21%2F011-%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
     <content type="text"><![CDATA[CSS百分比的坑top, height 百分比参照包含块的高度 left, margin, padding, width 百分比参照包含块的宽度 translate(-50%, -50%) 百分比参照于自身的宽高 background-position 百分参照于（图片区域-图片的位图像素值）]]></content>
