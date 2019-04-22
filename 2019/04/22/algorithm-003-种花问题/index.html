@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="mika">
+  <meta name="keywords" content="算法,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="每天都要进步一点点，再长的路也能走完">
+<meta name="description" content="题目描述假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 示例 1: 输入: flowerbed = [1,0,0,0,1], n = 1输出:">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="algorithm-003-种花问题">
+<meta property="og:title" content="LeetCode-605 种花问题">
 <meta property="og:url" content="http://yoursite.com/2019/04/22/algorithm-003-种花问题/index.html">
 <meta property="og:site_name" content="Mika的前端小窝">
-<meta property="og:description" content="每天都要进步一点点，再长的路也能走完">
+<meta property="og:description" content="题目描述假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 示例 1: 输入: flowerbed = [1,0,0,0,1], n = 1输出:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-22T10:34:28.846Z">
+<meta property="og:updated_time" content="2019-04-22T11:46:12.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="algorithm-003-种花问题">
-<meta name="twitter:description" content="每天都要进步一点点，再长的路也能走完">
+<meta name="twitter:title" content="LeetCode-605 种花问题">
+<meta name="twitter:description" content="题目描述假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 示例 1: 输入: flowerbed = [1,0,0,0,1], n = 1输出:">
 
 
 
@@ -132,7 +133,7 @@
 
 
 
-  <title>algorithm-003-种花问题 | Mika的前端小窝</title>
+  <title>LeetCode-605 种花问题 | Mika的前端小窝</title>
   
 
 
@@ -308,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">algorithm-003-种花问题</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-605 种花问题</h1>
         
 
         <div class="post-meta">
@@ -330,6 +331,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -367,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  552
                 </span>
               
 
@@ -383,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -404,7 +427,15 @@
       
 
       
-        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。</p>
+<p>给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。</p>
+<p>示例 1:</p>
+<p>输入: flowerbed = [1,0,0,0,1], n = 1<br>输出: True<br>示例 2:</p>
+<p>输入: flowerbed = [1,0,0,0,1], n = 2<br>输出: False<br>注意:</p>
+<p>数组内已种好的花不会违反种植规则。<br>输入的数组长度范围为 [1, 20000]。<br>n 是非负整数，且不会超过输入数组的大小。</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>=&gt; 如果题目没有给出1、0的描述，应该首先将问题抽象成出来；<br>=&gt;怎么才能种花？两种情况<br>    =&gt; 边界情况：<br>        =&gt; 左边界：00…,01…只有在第第一个位置为0，且第二个位置为零的时候，左边第一个位置才能种花<br>        =&gt; 右边界：…00,…10 右边能不能种花，取决于倒数第二个位置，如果为零，则最右边可以种花<br>    =&gt;中间情况： 000… 只有某元素左右两边都是0的时候，中间该元素才能种花</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flowers = <span class="function">(<span class="params">field, n</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//记录最多能种多少</span></span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">    <span class="comment">// 为了最右边位置能够比较左右元素值，这里添加一个默认元素0</span></span><br><span class="line">    field.push(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>, len=field.length<span class="number">-1</span>; i&lt;len; i++)&#123;</span><br><span class="line">        <span class="comment">// 如果i位置上的元素是0，才进行判断，否则直接跳到下个元素</span></span><br><span class="line">        <span class="keyword">if</span>(field[i] === <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i === <span class="number">0</span> &amp;&amp; field[<span class="number">1</span>] === <span class="number">0</span>)&#123;</span><br><span class="line">                count++</span><br><span class="line">                <span class="comment">// 这里应该多跳过一个元素</span></span><br><span class="line">                i++</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(field[i<span class="number">-1</span>] === <span class="number">0</span> &amp;&amp; field[i+<span class="number">1</span>] === <span class="number">0</span>)&#123;</span><br><span class="line">                count ++</span><br><span class="line">                i++</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count &gt;= n</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test</span></span><br><span class="line"><span class="keyword">let</span> field1 = [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> field2 = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> field3 = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'field1-1'</span>,flowers(field1, <span class="number">1</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'field1-2'</span>,flowers(field1, <span class="number">2</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'field2-2'</span>,flowers(field2, <span class="number">2</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'field3-3'</span>,flowers(field3, <span class="number">3</span>)) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -418,6 +449,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa f-fw fa-tags"></i> 算法</a>
+          
+        </div>
       
 
       
@@ -497,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分析"><span class="nav-number">2.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
