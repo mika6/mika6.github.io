@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[坑-002-边距重叠问题]]></title>
+    <url>%2F2019%2F04%2F22%2F%E5%9D%91-002-%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距水平方向是不会发生重叠的情况 边距计算方法：全部为正值的情况，取值最大的有正有负的情况，分别取绝对值最大的求和都是负值的情况，取绝对值最大的，从零开始负向位移 解决方法 =&gt; 触发BFCBFC：块级格式化上下文原理：1、 属于同一BFC的垂直方向会发生重叠，属于不同BFC的不会重叠2、 BFC的区域不会与浮动元素的box发生重叠3、 BFC是页面上一个独立的容器，里面跟外面不会互相影响4、 计算BFC高度时，浮动元素也参与计算触发条件1、 根元素2、 float不为none3、 position为fixed和absolute4、 overflow为hidden和auto5、 display为inline-block、table-cell、flex、inline-flex 补充：BFC使用场景1、 自适应两栏布局 12.aside&#123;float:left;&#125;.main&#123;overflow:hidden;&#125; 2、清除浮动 12.parent&#123;overflow:hidden;&#125;.child&#123;float:left;&#125; 3、防止垂直边距重叠 12345678910&lt;div&gt; &lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;style&gt;div&#123; overflow:hidden;&#125;&lt;/style&gt;]]></content>
+      <categories>
+        <category>坑</category>
+      </categories>
+      <tags>
+        <tag>坑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-605 种花问题]]></title>
     <url>%2F2019%2F04%2F22%2Falgorithm-003-%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[题目描述假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 示例 1: 输入: flowerbed = [1,0,0,0,1], n = 1输出: True示例 2: 输入: flowerbed = [1,0,0,0,1], n = 2输出: False注意: 数组内已种好的花不会违反种植规则。输入的数组长度范围为 [1, 20000]。n 是非负整数，且不会超过输入数组的大小。 问题分析=&gt; 如果题目没有给出1、0的描述，应该首先将问题抽象成出来；=&gt;怎么才能种花？两种情况 =&gt; 边界情况： =&gt; 左边界：00…,01…只有在第第一个位置为0，且第二个位置为零的时候，左边第一个位置才能种花 =&gt; 右边界：…00,…10 右边能不能种花，取决于倒数第二个位置，如果为零，则最右边可以种花 =&gt;中间情况： 000… 只有某元素左右两边都是0的时候，中间该元素才能种花 代码1234567891011121314151617181920212223242526272829let flowers = (field, n) =&gt; &#123; //记录最多能种多少 let count = 0 // 为了最右边位置能够比较左右元素值，这里添加一个默认元素0 field.push(0) for(let i=0, len=field.length-1; i&lt;len; i++)&#123; // 如果i位置上的元素是0，才进行判断，否则直接跳到下个元素 if(field[i] === 0)&#123; if(i === 0 &amp;&amp; field[1] === 0)&#123; count++ // 这里应该多跳过一个元素 i++ &#125;else if(field[i-1] === 0 &amp;&amp; field[i+1] === 0)&#123; count ++ i++ &#125; &#125; &#125; return count &gt;= n&#125;// testlet field1 = [1,0,0,0,1]let field2 = [0,0,1,0,0,0,1,0]let field3 = [0,0,1,0,0,0,1,0,0]console.log('field1-1',flowers(field1, 1)) // trueconsole.log('field1-2',flowers(field1, 2)) // falseconsole.log('field2-2',flowers(field2, 2)) // trueconsole.log('field3-3',flowers(field3, 3)) // true]]></content>
@@ -34,11 +45,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[一些坑]]></title>
-    <url>%2F2019%2F04%2F21%2F%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
+    <title><![CDATA[【坑】之CSS百分比]]></title>
+    <url>%2F2019%2F04%2F21%2F%E5%9D%91-001-CSS%E7%99%BE%E5%88%86%E6%AF%94%2F</url>
     <content type="text"><![CDATA[CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值） 边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距，计算]]></content>
       <categories>
-        <category>一些坑</category>
+        <category>坑</category>
       </categories>
       <tags>
         <tag>坑</tag>
