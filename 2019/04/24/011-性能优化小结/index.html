@@ -95,7 +95,7 @@
 <meta property="og:description" content="前端性能优化，大方向来讲，可从两方面入手，网络层面与页面渲染层面 网络层面从输入 url 到显示页面，在网络层面主要包含三个过程：1 DNS 解析2 TCP 连接3 HTTP 请求与响应 请求过程优化（http 请求优化）http 请求优化主要有两个方向：1 减少请求次数2 减少单次请求消耗的时间 构建工具性能调优 减少 loader 所做的事情1 用 include、exclude 来避免不必要">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/20160805094241153">
-<meta property="og:updated_time" content="2019-04-26T06:14:47.303Z">
+<meta property="og:updated_time" content="2019-04-30T08:25:43.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化小结">
 <meta name="twitter:description" content="前端性能优化，大方向来讲，可从两方面入手，网络层面与页面渲染层面 网络层面从输入 url 到显示页面，在网络层面主要包含三个过程：1 DNS 解析2 TCP 连接3 HTTP 请求与响应 请求过程优化（http 请求优化）http 请求优化主要有两个方向：1 减少请求次数2 减少单次请求消耗的时间 构建工具性能调优 减少 loader 所做的事情1 用 include、exclude 来避免不必要">
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.2k
+                  3.5k
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -488,7 +488,17 @@
 <li>绘制渲染树：遍历渲染树，使用 UI 后端层来绘制每个节点</li>
 </ul>
 <h5 id="CSS-优化"><a href="#CSS-优化" class="headerlink" title="CSS 优化"></a>CSS 优化</h5><p>CSS 查找样式规则时，是从右往左的<br>性能优化总结：<br>1 避免使用通配符，只对需要永奥的元素进行选择。<br>2 关注可以通过继承实现的属性，避免重复匹配重复定义。<br>3 少食用标签选择器，如果可以，使用类选择器替代。<br>4 id 和 class 选择器不添加多余的标签选择器<br>5 减少嵌套，后代选择器开销最高，应该尽量将选择器的深度降低。</p>
-<h5 id="CSS-与-JS-加载优化"><a href="#CSS-与-JS-加载优化" class="headerlink" title="CSS 与 JS 加载优化"></a>CSS 与 JS 加载优化</h5><p>HTML、CSS、JS都具有阻塞渲染的特性<br><strong>CSS的阻塞</strong><br>浏览器在构建CSSOM的过程中，不会渲染任何已经处理的内容，即使DOM解析完成，只要CSSOM还没完成，渲染这个事情就还没完成。<br>=&gt; </p>
+<h5 id="CSS-与-JS-加载优化"><a href="#CSS-与-JS-加载优化" class="headerlink" title="CSS 与 JS 加载优化"></a>CSS 与 JS 加载优化</h5><p>HTML、CSS、JS 都具有阻塞渲染的特性<br><strong>CSS 的阻塞</strong><br>浏览器在构建 CSSOM 的过程中，不会渲染任何已经处理的内容，即使 DOM 解析完成，只要 CSSOM 还没完成，渲染这个事情就不 OK。浏览器在构建 CSSOM 的过程中，不会渲染任何已处理的内容。<br>=&gt; CSS 是阻塞渲染的资源，需要尽早的下载。=&gt; 放在 head 里，启用 CDN 等。<br><strong>JS 的阻塞</strong><br>JS 引擎是独立于渲染引擎的，当 HTML 解析器遇到一个 script 标签是，它会停止渲染，将控制权交给 JS 引擎，JS 执行完毕后，控制权归还给渲染引擎，继续 DOM 和 CSSOM 的构建。</p>
+<ul>
+<li>JS 加载的方式<br>1 正常加载</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该方式会阻塞浏览器，必须等 JS 加载执行完毕才能做其他的。<br>2 async</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"index.js"</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用 async 属性，<strong>加载是异步的</strong>，加载过程中不会阻塞浏览器，<strong>加载结束会立即执行</strong>。执行顺序不一定。<br>3 defer</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"index.js"</span> <span class="attr">defer</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用 defer 属性，<strong>加载是异步的，加载结束后，不会立即执行，整个文档解析完成，DOMContentLoaded 事件即将被触发时，被 defer 标记的 JS 文件才会开始执行。这里是顺序执行。
+</strong> defer 和 async 使用场景:**<br>当脚本与 DOM 元素和其他脚本之间依赖关系不强是，选用 async。<br>当脚本依赖于 DOM 元素和其他脚本的执行结果时，选用 defer。</p>
 <h3 id="DOM-优化"><a href="#DOM-优化" class="headerlink" title="DOM 优化"></a>DOM 优化</h3><h3 id="首屏渲染优化"><a href="#首屏渲染优化" class="headerlink" title="首屏渲染优化"></a>首屏渲染优化</h3>
       
     </div>
@@ -619,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

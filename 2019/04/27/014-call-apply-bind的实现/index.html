@@ -86,16 +86,17 @@
 
 
 
-<meta name="description" content="每天都要进步一点点，再长的路也能走完">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mika的前端小窝">
-<meta property="og:url" content="http://yoursite.com/categories/坑/index.html">
+<meta name="description" content="三个方法的作用：  改变this的指向 传参 call/apply 返回函数结果，bind 返回新的函数  call 的实现 ES3 的写法  123456789101112FUnction.prototype.mycall = function(obj)&amp;#123;    var obj = obj || window    obj.fn = this    var args = []    /">
+<meta property="og:type" content="article">
+<meta property="og:title" content="014-call&#x2F;apply&#x2F;bind的实现">
+<meta property="og:url" content="http://yoursite.com/2019/04/27/014-call-apply-bind的实现/index.html">
 <meta property="og:site_name" content="Mika的前端小窝">
-<meta property="og:description" content="每天都要进步一点点，再长的路也能走完">
+<meta property="og:description" content="三个方法的作用：  改变this的指向 传参 call/apply 返回函数结果，bind 返回新的函数  call 的实现 ES3 的写法  123456789101112FUnction.prototype.mycall = function(obj)&amp;#123;    var obj = obj || window    obj.fn = this    var args = []    /">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T11:56:24.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mika的前端小窝">
-<meta name="twitter:description" content="每天都要进步一点点，再长的路也能走完">
+<meta name="twitter:title" content="014-call&#x2F;apply&#x2F;bind的实现">
+<meta name="twitter:description" content="三个方法的作用：  改变this的指向 传参 call/apply 返回函数结果，bind 返回新的函数  call 的实现 ES3 的写法  123456789101112FUnction.prototype.mycall = function(obj)&amp;#123;    var obj = obj || window    obj.fn = this    var args = []    /">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/坑/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/27/014-call-apply-bind的实现/">
 
 
 
 
 
-  <title>分类: 坑 | Mika的前端小窝</title>
+  <title>014-call/apply/bind的实现 | Mika的前端小窝</title>
   
 
 
@@ -150,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,79 +277,240 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>坑<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/014-call-apply-bind的实现/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mika">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar-1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mika的前端小窝">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/04/22/坑-002-边距重叠问题/" itemprop="url">
-              
-                <span itemprop="name">坑-002-边距重叠问题</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">014-call/apply/bind的实现</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-22T19:55:55+08:00" content="2019-04-22">
-          04-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T15:38:28+08:00">
+                2019-04-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/27/014-call-apply-bind的实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/27/014-call-apply-bind的实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读<i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  358
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/21/坑-001-CSS百分比/" itemprop="url">
-              
-                <span itemprop="name">【坑】之CSS百分比</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-21T19:59:25+08:00" content="2019-04-21">
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>三个方法的作用：</p>
+<ul>
+<li>改变<code>this</code>的指向</li>
+<li>传参</li>
+<li>call/apply 返回函数结果，bind 返回新的函数</li>
+</ul>
+<h2 id="call-的实现"><a href="#call-的实现" class="headerlink" title="call 的实现"></a>call 的实现</h2><ul>
+<li>ES3 的写法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FUnction.prototype.mycall = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = obj || <span class="built_in">window</span></span><br><span class="line">    obj.fn = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> args = []</span><br><span class="line">    <span class="comment">// 使用eval，会将传入的字符串当做JS解析，所以下面push的是字符串</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>, len = <span class="built_in">arguments</span>.length; i&lt;len; i++)&#123;</span><br><span class="line">        args.push(<span class="string">'arguments['</span>+ i +<span class="string">'])</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    var res = eval('</span>obj.fn(<span class="string">'+ args +'</span>)<span class="string">')</span></span><br><span class="line"><span class="string">    delete obj.fn</span></span><br><span class="line"><span class="string">    return res</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 ES6</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.mycall = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = obj || <span class="built_in">window</span>;</span><br><span class="line">  obj.fn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">let</span> args = [...arguments].slice(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">let</span> res = obj.fn(...args);</span><br><span class="line">  <span class="keyword">delete</span> obj.fn;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="apply-实现"><a href="#apply-实现" class="headerlink" title="apply 实现"></a>apply 实现</h2><ul>
+<li>ES3 的写法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply(obj,arr)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = obj || <span class="built_in">window</span></span><br><span class="line">    obj.fn = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> res</span><br><span class="line">    <span class="keyword">var</span> args = []</span><br><span class="line">    <span class="keyword">if</span>(!arr)&#123;</span><br><span class="line">        res = obj.fn()</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">// 使用eval，会将传入的字符串当做JS解析，所以下面push的是字符串</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>, len = arr.length; i&lt;len; i++)&#123;</span><br><span class="line">            args.push(<span class="string">'arr['</span>+ i +<span class="string">']'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">eval</span>(<span class="string">'obj.fn('</span>+ args+<span class="string">')'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> obj.fn</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 ES6</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply(obj, arr)&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = obj || <span class="built_in">window</span></span><br><span class="line">    obj.fn = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">let</span> res</span><br><span class="line">    <span class="keyword">if</span>(!arr)&#123;</span><br><span class="line">        res = obj.fn()</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        res = obj.fn(...arr)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> obj.fn</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bind-的实现"><a href="#bind-的实现" class="headerlink" title="bind 的实现"></a>bind 的实现</h2><ul>
+<li>ES3 的写法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"this is not a function"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">var</span> arg = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">var</span> fBind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bindArgs = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="keyword">return</span> self.apply(</span><br><span class="line">      <span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP ? <span class="keyword">this</span> : obj || <span class="built_in">window</span>,</span><br><span class="line">      args.concat(bindArgs)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//创建中转函数，让fBind间接继承目标的原型</span></span><br><span class="line">  <span class="keyword">var</span> fNOP = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fNOP.prototype = <span class="keyword">this</span>.prototype</span><br><span class="line">    fBInd.prototype = <span class="keyword">new</span> fNOP()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fBind</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/27/013-手写JS中深-浅拷贝/" rel="next" title="013-手写JS中深/浅拷贝">
+                <i class="fa fa-chevron-left"></i> 013-手写JS中深/浅拷贝
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +518,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -376,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -449,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call-的实现"><span class="nav-number">1.</span> <span class="nav-text">call 的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-实现"><span class="nav-number">2.</span> <span class="nav-text">apply 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bind-的实现"><span class="nav-number">3.</span> <span class="nav-text">bind 的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -611,6 +805,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
