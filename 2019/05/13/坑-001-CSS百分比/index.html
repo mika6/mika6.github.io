@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值） 边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距，计算">
+<meta name="description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值）">
 <meta name="keywords" content="坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【坑】之CSS百分比">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/坑-001-CSS百分比/index.html">
+<meta property="og:title" content="CSS百分比参照">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/坑-001-CSS百分比/index.html">
 <meta property="og:site_name" content="Mika的前端小窝">
-<meta property="og:description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值） 边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距，计算">
+<meta property="og:description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T07:20:18.881Z">
+<meta property="og:updated_time" content="2019-05-14T15:01:26.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【坑】之CSS百分比">
-<meta name="twitter:description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值） 边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距，计算">
+<meta name="twitter:title" content="CSS百分比参照">
+<meta name="twitter:description" content="CSS 百分比的坑top, height 百分比参照包含块的高度left, margin, padding, width 百分比参照包含块的宽度translate(-50%, -50%) 百分比参照于自身的宽高background-position 百分参照于（图片区域-图片的位图像素值）">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/坑-001-CSS百分比/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/13/坑-001-CSS百分比/">
 
 
 
 
 
-  <title>【坑】之CSS百分比 | Mika的前端小窝</title>
+  <title>CSS百分比参照 | Mika的前端小窝</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/坑-001-CSS百分比/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/坑-001-CSS百分比/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mika">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【坑】之CSS百分比</h1>
+          <h1 class="post-title" itemprop="name headline">CSS百分比参照</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T19:59:25+08:00">
-                2019-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T23:24:09+08:00">
+                2019-05-13
               </time>
             
 
@@ -362,8 +362,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/21/坑-001-CSS百分比/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/坑-001-CSS百分比/" itemprop="commentCount"></span>
+                <a href="/2019/05/13/坑-001-CSS百分比/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/坑-001-CSS百分比/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  110
+                  67
                 </span>
               
 
@@ -428,7 +428,6 @@
 
       
         <h2 id="CSS-百分比的坑"><a href="#CSS-百分比的坑" class="headerlink" title="CSS 百分比的坑"></a>CSS 百分比的坑</h2><p>top, height 百分比参照包含块的高度<br>left, margin, padding, width 百分比参照包含块的宽度<br>translate(-50%, -50%) 百分比参照于自身的宽高<br>background-position 百分参照于（图片区域-图片的位图像素值）</p>
-<h2 id="边距重叠问题"><a href="#边距重叠问题" class="headerlink" title="边距重叠问题"></a>边距重叠问题</h2><p>比邻的两个或多个<strong>普通流</strong>中的<strong>块元素</strong>在<strong>垂直方向上</strong>的外边距会合并为一个外边距，计算</p>
 
       
     </div>
@@ -459,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/010-CSS3之flex基本用法小结/" rel="next" title="CSS3之flex基本用法小结">
-                <i class="fa fa-chevron-left"></i> CSS3之flex基本用法小结
+              <a href="/2019/05/09/坑-003-一些兼容性问题整理/" rel="next" title="一些兼容性问题整理">
+                <i class="fa fa-chevron-left"></i> 一些兼容性问题整理
               </a>
             
           </div>
@@ -468,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/21/algorithm-001-电话号码的字母组合/" rel="prev" title="LeetCode-17 电话号码的字母组合">
-                LeetCode-17 电话号码的字母组合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-百分比的坑"><span class="nav-number">1.</span> <span class="nav-text">CSS 百分比的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边距重叠问题"><span class="nav-number">2.</span> <span class="nav-text">边距重叠问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-百分比的坑"><span class="nav-number">1.</span> <span class="nav-text">CSS 百分比的坑</span></a></li></ol></div>
             
 
           </div>
