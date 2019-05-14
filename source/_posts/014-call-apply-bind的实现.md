@@ -1,5 +1,5 @@
 ---
-title: 014-call/apply/bind的实现
+title: call/apply/bind的实现
 date: 2019-04-27 15:38:28
 tags:
 categories: JS
