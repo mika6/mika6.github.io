@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="算法,">
+  <meta name="keywords" content="数据结构,">
 
 
 
@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="题目描述给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。  示例: 12输入：&quot;23&quot;输出：[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]. 说明:尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。 问题分析需要根据输入的数字映射到">
-<meta name="keywords" content="算法">
+<meta name="description" content="二叉树（Binary Search Tree）是一种特殊的树，最多有两个子节点。二叉树的遍历方法有深度遍历和广度遍历，深度遍历有前序、中序和后序遍历三种遍历方法，广度遍历也就是所谓的层次遍历。四中遍历方法的基本思路：  前序遍历：根节点 –&amp;gt; 左子树 –&amp;gt; 右子树 中序遍历：左子树 –&amp;gt; 根节点 –&amp;gt; 右子树 后序遍历：左子树 –&amp;gt; 右子树 –&amp;gt; 根节点 层次遍">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-17 电话号码的字母组合">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/algorithm-001-电话号码的字母组合/index.html">
+<meta property="og:title" content="JS实现二叉树">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/DS-001-二叉树遍历/index.html">
 <meta property="og:site_name" content="Mika的前端小窝">
-<meta property="og:description" content="题目描述给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。  示例: 12输入：&quot;23&quot;输出：[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]. 说明:尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。 问题分析需要根据输入的数字映射到">
+<meta property="og:description" content="二叉树（Binary Search Tree）是一种特殊的树，最多有两个子节点。二叉树的遍历方法有深度遍历和广度遍历，深度遍历有前序、中序和后序遍历三种遍历方法，广度遍历也就是所谓的层次遍历。四中遍历方法的基本思路：  前序遍历：根节点 –&amp;gt; 左子树 –&amp;gt; 右子树 中序遍历：左子树 –&amp;gt; 根节点 –&amp;gt; 右子树 后序遍历：左子树 –&amp;gt; 右子树 –&amp;gt; 根节点 层次遍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png">
-<meta property="og:updated_time" content="2019-04-22T11:46:16.355Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10160199-9400a4478741c6e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-15T07:42:27.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-17 电话号码的字母组合">
-<meta name="twitter:description" content="题目描述给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。  示例: 12输入：&quot;23&quot;输出：[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]. 说明:尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。 问题分析需要根据输入的数字映射到">
-<meta name="twitter:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png">
+<meta name="twitter:title" content="JS实现二叉树">
+<meta name="twitter:description" content="二叉树（Binary Search Tree）是一种特殊的树，最多有两个子节点。二叉树的遍历方法有深度遍历和广度遍历，深度遍历有前序、中序和后序遍历三种遍历方法，广度遍历也就是所谓的层次遍历。四中遍历方法的基本思路：  前序遍历：根节点 –&amp;gt; 左子树 –&amp;gt; 右子树 中序遍历：左子树 –&amp;gt; 根节点 –&amp;gt; 右子树 后序遍历：左子树 –&amp;gt; 右子树 –&amp;gt; 根节点 层次遍">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/10160199-9400a4478741c6e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/algorithm-001-电话号码的字母组合/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/15/DS-001-二叉树遍历/">
 
 
 
 
 
-  <title>LeetCode-17 电话号码的字母组合 | Mika的前端小窝</title>
+  <title>JS实现二叉树 | Mika的前端小窝</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/algorithm-001-电话号码的字母组合/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/DS-001-二叉树遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mika">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-17 电话号码的字母组合</h1>
+          <h1 class="post-title" itemprop="name headline">JS实现二叉树</h1>
         
 
         <div class="post-meta">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T23:59:13+08:00">
-                2019-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-15T13:31:18+08:00">
+                2019-05-15
               </time>
             
 
@@ -364,8 +364,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/21/algorithm-001-电话号码的字母组合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/algorithm-001-电话号码的字母组合/" itemprop="commentCount"></span>
+                <a href="/2019/05/15/DS-001-二叉树遍历/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/15/DS-001-二叉树遍历/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  362
+                  774
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -429,14 +429,27 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。</p>
-<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png" alt="17"></p>
-<p><strong>示例:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：<span class="string">"23"</span></span><br><span class="line">输出：[<span class="string">"ad"</span>, <span class="string">"ae"</span>, <span class="string">"af"</span>, <span class="string">"bd"</span>, <span class="string">"be"</span>, <span class="string">"bf"</span>, <span class="string">"cd"</span>, <span class="string">"ce"</span>, <span class="string">"cf"</span>].</span><br></pre></td></tr></table></figure>
-<p><strong>说明:</strong><br>尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。</p>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>需要根据输入的数字映射到对应的字母，根据输入的数字对进行组合：<br>思路一：循环嵌套<br>思路二：两两组合，然后递归</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">let</span> phonenum = <span class="function">(<span class="params">str</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// 1 建立电话号码键盘映射</span></span><br><span class="line">  <span class="keyword">let</span> map = [<span class="string">''</span>, <span class="string">''</span>, <span class="string">'abc'</span>, <span class="string">'def'</span>, <span class="string">'ghi'</span>, <span class="string">'jkl'</span>, <span class="string">'mon'</span>, <span class="string">'pqrs'</span>,<span class="string">'tuv'</span>, <span class="string">'wxyz'</span>]</span><br><span class="line">  <span class="comment">// 234 =&gt; [2,3,4]</span></span><br><span class="line">  <span class="keyword">let</span> num = str.split(<span class="string">''</span>)</span><br><span class="line">  <span class="comment">// 2 保存映射后的内容 23 =&gt; ['abc', 'def']</span></span><br><span class="line">  <span class="keyword">let</span> code = []</span><br><span class="line">  num.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(map[item])&#123;</span><br><span class="line">      code.push(map[item])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 3. 进行组合</span></span><br><span class="line">  <span class="keyword">let</span> comb = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 临时变量用来保存前两项组合的结果</span></span><br><span class="line">    <span class="keyword">let</span> temp = []</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>, il = arr[<span class="number">0</span>].length; i&lt;il; i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>,jl=arr[<span class="number">1</span>].length; j&lt;jl; j++)&#123;</span><br><span class="line">        temp.push(<span class="string">`<span class="subst">$&#123;arr[<span class="number">0</span>][i]&#125;</span><span class="subst">$&#123;arr[<span class="number">1</span>][j]&#125;</span>`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr.splice(<span class="number">0</span>, <span class="number">2</span>, temp)</span><br><span class="line">    <span class="keyword">if</span>(arr.length&gt;<span class="number">1</span>)&#123;</span><br><span class="line">      comb(arr)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> temp</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 4.调用并返回结果</span></span><br><span class="line">  <span class="keyword">return</span> comb(code)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test</span></span><br><span class="line">phonenum(<span class="string">'345'</span>)</span><br><span class="line"><span class="comment">// ["dgj", "dgk", "dgl", "dhj", "dhk", "dhl", "dij", "dik", "dil", "egj", "egk", "egl", "ehj", "ehk", "ehl", "eij", "eik", "eil", "fgj", "fgk", "fgl", "fhj", "fhk", "fhl", "fij", "fik", "fil"]</span></span><br></pre></td></tr></table></figure>
+        <p>二叉树（Binary Search Tree）是一种特殊的树，最多有两个子节点。<br>二叉树的遍历方法有深度遍历和广度遍历，深度遍历有前序、中序和后序遍历三种遍历方法，广度遍历也就是所谓的层次遍历。<br>四中遍历方法的基本思路：</p>
+<ul>
+<li>前序遍历：根节点 –&gt; 左子树 –&gt; 右子树</li>
+<li>中序遍历：左子树 –&gt; 根节点 –&gt; 右子树</li>
+<li>后序遍历：左子树 –&gt; 右子树 –&gt; 根节点</li>
+<li>层次遍历：逐层遍历<br><img src="https://upload-images.jianshu.io/upload_images/10160199-9400a4478741c6e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>上图遍历结果如下：</li>
+<li>前序遍历：1 2 4 5 7 8 3 6</li>
+<li>中序遍历：4 2 7 5 8 1 3 6</li>
+<li>后序遍历：4 7 8 5 2 6 3 1</li>
+<li>层次遍历：1 2 3 4 5 6 7 8</li>
+</ul>
+<h2 id="二叉树的实现"><a href="#二叉树的实现" class="headerlink" title="二叉树的实现"></a>二叉树的实现</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义节点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(value)&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = value</span><br><span class="line">        <span class="keyword">this</span>.left = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">this</span>.right = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义树</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BSTree</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(data)&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//二叉树的操作方法</span></span><br><span class="line">    <span class="comment">// insert(value)&#123;...&#125;</span></span><br><span class="line">    <span class="comment">// romove(value)&#123;...&#125;</span></span><br><span class="line">    <span class="comment">// search(value)&#123;...&#125;</span></span><br><span class="line">    <span class="comment">// min/max</span></span><br><span class="line">    <span class="comment">// preOrderTraverse()&#123;...&#125;</span></span><br><span class="line">    <span class="comment">// inOrderTraverse()&#123;...&#125;</span></span><br><span class="line">    <span class="comment">// postOrderTraverse()&#123;...&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">insert(value)&#123;</span><br><span class="line">    <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(value)</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.root)&#123;</span><br><span class="line">        <span class="keyword">this</span>.root = newNode</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.insertNode(<span class="keyword">this</span>.root, newNode)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 插入子节点</span></span><br><span class="line">insertNode(node, newNode)&#123;</span><br><span class="line">    <span class="keyword">if</span>(newNode.value &lt; node.value)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node.left)&#123;</span><br><span class="line">            node.left = newNOde</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.insertNode(node.left, newNode)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!node.right)&#123;</span><br><span class="line">            node.right = newNode</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.insertNode(node.right, newNode)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><p>前序遍历先访问节点本身，然后访问左子树，最后访问右子树</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">preOrderTraverse(callback)&#123;</span><br><span class="line">    <span class="keyword">this</span>.preOrderTraverseNode(<span class="keyword">this</span>.root, callback)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">preOrderTraverseNode(node, callback)&#123;</span><br><span class="line">    <span class="keyword">if</span>(node !== <span class="literal">null</span>)&#123;</span><br><span class="line">        callback(node.value)</span><br><span class="line">        <span class="keyword">this</span>.preOrderTraverseNode(node.left)</span><br><span class="line">        <span class="keyword">this</span>.preOrderTraverseNode(node.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>中序遍历先访问左子树，然后访问节点自身，最后访问右子树</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">inOrderTraverse(callback)&#123;</span><br><span class="line">    <span class="keyword">this</span>.inOrderTraverseNode(<span class="keyword">this</span>.root, callback)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inOrderTraverseNode(node, callback)&#123;</span><br><span class="line">    <span class="keyword">if</span>(node !== <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.inOrderTraverseNode(node.left, callback)</span><br><span class="line">        callback(node.value)</span><br><span class="line">        <span class="keyword">this</span>.inOrderTraverseNode(node.right, callback)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">postOrderTraverse(callback)&#123;</span><br><span class="line">    <span class="keyword">this</span>.postOrderTraverseNode(<span class="keyword">this</span>.root, callback)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">postOrderTraverseNode(node, callback)&#123;</span><br><span class="line">    <span class="keyword">this</span>.postOrderTraverseNode(node.left, callback)</span><br><span class="line">    <span class="keyword">this</span>.postOrderTraverseNode(node.right, callback)</span><br><span class="line">    callback(node.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="搜索最小-大值"><a href="#搜索最小-大值" class="headerlink" title="搜索最小/大值"></a>搜索最小/大值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 搜索最小值</span></span><br><span class="line">min()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.nimNode(<span class="keyword">this</span>.root).value</span><br><span class="line">&#125;</span><br><span class="line">minNOde(node)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!node.left)&#123;</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.nimNode(node.left)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 搜索最大值</span></span><br><span class="line">max()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.maxNode(<span class="keyword">this</span>.root).value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">maxNode(node)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!node.right)&#123;</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.maxNode(node.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="搜索特定的值"><a href="#搜索特定的值" class="headerlink" title="搜索特定的值"></a>搜索特定的值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">search(value)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.searchNode(<span class="keyword">this</span>.root, value)    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">searchNode(node, value)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!node)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(value &lt; node.value)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.searchNode(node.left, value)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(value &gt; node.value)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.searchNode(node.right, value)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="移除节点"><a href="#移除节点" class="headerlink" title="移除节点"></a>移除节点</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">remove(value)&#123;</span><br><span class="line">    <span class="keyword">return</span>  <span class="keyword">this</span>.root = <span class="keyword">this</span>.removeNode(<span class="keyword">this</span>.root, value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">removeNode(node, value)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!node)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(value &lt; node.value)&#123;</span><br><span class="line">        node.left = <span class="keyword">this</span>.removeNode(node.left, value)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(value &gt; node.value)&#123;</span><br><span class="line">        node.right = <span class="keyword">this</span>.removeNode(node.right, value)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 如果不存在左右节点</span></span><br><span class="line">        <span class="keyword">if</span>(!node.left &amp;&amp; !node.right)&#123;</span><br><span class="line">            node = <span class="literal">null</span></span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 存在左节点</span></span><br><span class="line">        <span class="keyword">if</span>(!node.right)&#123;</span><br><span class="line">            node = node.left</span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line">        <span class="comment">// 存在右节点</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(!node.left)&#123;</span><br><span class="line">            node = node.right</span><br><span class="line">            <span class="keyword">return</span> node</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 两个节点都存在</span></span><br><span class="line">        <span class="keyword">let</span> minRight = <span class="keyword">this</span>.minNode(node.right)</span><br><span class="line">        node.value = minRight.value</span><br><span class="line">        node.right = <span class="keyword">this</span>.removeNode(node.right, minRight.value)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -454,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"><i class="fa f-fw fa-tags"></i> 算法</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa f-fw fa-tags"></i> 数据结构</a>
           
         </div>
       
@@ -467,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/010-CSS3之flex基本用法小结/" rel="next" title="CSS3之flex基本用法小结">
-                <i class="fa fa-chevron-left"></i> CSS3之flex基本用法小结
+              <a href="/2019/05/13/001-css小结/" rel="next" title="css基础知识小结">
+                <i class="fa fa-chevron-left"></i> css基础知识小结
               </a>
             
           </div>
@@ -476,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/22/algorithm-002-卡牌分组/" rel="prev" title="LeetCode-914 卡牌分组">
-                LeetCode-914 卡牌分组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分析"><span class="nav-number">2.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的实现"><span class="nav-number">1.</span> <span class="nav-text">二叉树的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入节点"><span class="nav-number">2.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前序遍历"><span class="nav-number">3.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中序遍历"><span class="nav-number">4.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序遍历"><span class="nav-number">5.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索最小-大值"><span class="nav-number">6.</span> <span class="nav-text">搜索最小/大值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索特定的值"><span class="nav-number">7.</span> <span class="nav-text">搜索特定的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除节点"><span class="nav-number">8.</span> <span class="nav-text">移除节点</span></a></li></ol></div>
             
 
           </div>
