@@ -436,7 +436,8 @@
 
 
 对象中的 this
-函数的定义位置不影响其 this 指向，this 指向只和调用函数的对象有
+函数的定义位置不影响其 this 指向，this 指向只和调用函数的对象有关。
+多层嵌套的对象
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -630,7 +631,7 @@
 
 undefined和null与其他类型的值比较时，结果都为false，它们互相比较时结果为true。
 
-12345678910false == null     // falsefalse == undefined  // flasenull == undefine
+12345678910false == null     // falsefalse == undefined  // flasenull == undefined   // tru
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -827,7 +828,8 @@ foeEach()不能使用break语句跳出循环，或者使用return从函数体内
 for-in()
 为循环“enumerable”对象设计的
 循环遍历对象自身和继承的可枚举属性（不含Symbol）
-会循环原型链和手动添加的键，返回
+会循环原型链和手动添加的键，返回键名key
+某些情况
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1022,7 +1024,7 @@ undefined和null与其他类型的值比较时，结果都为false，它们互�
 
 undefined
 
-当声明的变量还未被初始化时
+当声明的变量还未被初始化时，变量的默认值为un
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1127,7 +1129,7 @@ undefined
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

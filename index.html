@@ -333,6 +333,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -593,7 +615,7 @@
           二叉树（Binary Search Tree）是一种特殊的树，最多有两个子节点。二叉树的遍历方法有深度遍历和广度遍历，深度遍历有前序、中序和后序遍历三种遍历方法，广度遍历也就是所谓的层次遍历。四中遍历方法的基本思路：
 
 前序遍历：根节点 –&gt; 左子树 –&gt; 右子树
-中序遍历：左子树 –&
+中序遍历：左子树 –&gt; 根节点 –&
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -793,7 +815,7 @@ ID选择器      #list{ }
 1.2 【基本选择器扩展】
 
 子元素选择器    #wrap&gt;.inner{}
-相邻
+相邻兄弟选择器   #w
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -982,7 +1004,7 @@ ID选择器      #list{ }
       
         
           
-          div 中插入 img 存在间隙原因: display:inline-block 布局的元素在 chrome 下会出现几像素的间隙，原因是因为我们在编辑器里写代码的时候，同级别的标签不写在同一 行以保持代码的整齐可读性，即 inline-block 布局的元素在编辑器里不在同一行，即存在换行符，因此
+          div 中插入 img 存在间隙原因: display:inline-block 布局的元素在 chrome 下会出现几像素的间隙，原因是因为我们在编辑器里写代码的时候，同级别的标签不写在同一 行以保持代码的整齐可读性，即 inline-block 布局的元素在编辑器里不在同一行，即存在换行符，因此这就是著名的 inl
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1172,7 +1194,7 @@ ID选择器      #list{ }
         
           
           整理一些面试过程中的问题
-JS 相关闭包闭包值有权访问另一个函数作用域中变量的函数，创建的创建方式是在一个函数的内部创建另一个函数，并在作用于外被调用。主要有三点需要注意：1 访问所在作用域的变量；2 函数嵌套；3 在所在作用域外被调用。注：如果定义了嵌套函数，每个嵌套的函数都格子对应一个作用域链，
+JS 相关闭包闭包值有权访问另一个函数作用域中变量的函数，创建的创建方式是在一个函数的内部创建另一个函数，并在作用于外被调用。主要有三点需要注意：1 访问所在作用域的变量；2 函数嵌套；3 在所在作用域外被调用。注：如果定义了嵌套函数，每个嵌套的函数都格子对应一个作用域链，并且这个作用域链指向
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1362,7 +1384,7 @@ JS 相关闭包闭包值有权访问另一个函数作用域中变量的函数�
         
           
           掘金上看到一位前辈总结的自检清单，转载一下，查漏补缺。作者：ConardLi链接：https://juejin.im/post/5cc1da82f265da036023b628来源：掘金
-开篇前端开发是一个非常特殊的行业，它的历史实际上不是很长，但是知识之繁杂，技术迭代速度之快是其他技术所不能比拟的
+开篇前端开发是一个非常特殊的行业，它的历史实际上不是很长，但是知识之繁杂，技术迭代速度之快是其他技术所不能比拟的。winter 在他
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1584,7 +1606,11 @@ O(lob2n)~O(n)
 O(n2)
 O(n)
 O(n2)
-O(
+O(1)
+稳定
+
+
+希尔
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1782,7 +1808,7 @@ call/apply 返回函数结果，bind 返回新的函数
 call 的实现
 ES3 的写法
 
-123456789101112FUnction.prototype.mycall = function(obj)&#123;    var obj = ob
+123456789101112FUnction.prototype.mycall = function(obj)&#123;    var obj = obj || windo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1949,7 +1975,7 @@ ES3 的写法
       
         
           
-          浅拷贝123456789function shallCopy(cource, target = &#123;&#125;) &#123;  for (let key in source) &#123;    // 排除原型上的属性    if (source.hasOwnProperty(key))
+          浅拷贝123456789function shallCopy(cource, target = &#123;&#125;) &#123;  for (let key in source) &#123;    // 排除原型上的属性    if (source.hasOwnProperty(key)) &#123;   
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2138,7 +2164,7 @@ ES3 的写法
       
         
           
-          原型链继承123456789101112131415function Sup&#123;    this.supName = 'sup'    this.arr = [1, 2, 3]&#125;Sup.prototype.getSupName = function()&#123;    conso
+          原型链继承123456789101112131415function Sup&#123;    this.supName = 'sup'    this.arr = [1, 2, 3]&#125;Sup.prototype.getSupName = function()&#123;    console.log(thi
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2243,7 +2269,7 @@ ES3 的写法
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
