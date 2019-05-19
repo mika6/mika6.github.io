@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="坑,">
+  <meta name="keywords" content="Vue,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距水平方向是不会发生重叠的情况  边距计算方法：全部为正值的情况，取值最大的有正有负的情况，分别取绝对值最大的求和都是负值的情况，取绝对值最大的，从零开始负向位移  解决方法 =&amp;gt; 触发BFCBFC：块级格式化上下文原理：1、 属于同一BFC的垂直方向会发生重叠，属于不同BFC的不会重叠2、 BFC的区域不会与浮">
-<meta name="keywords" content="坑">
+<meta name="description" content="摘要：vue 路由传参指的是，嵌套路由时，由父路由向子路由传递参数。传递参数主要有两种方式：query 传参；params 传参。params 传参存在两种形式，一是在 url 中显示参数，而是在 url 中不显示参数。">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="边距重叠问题">
-<meta property="og:url" content="http://yoursite.com/2019/04/22/坑-002-边距重叠问题/index.html">
+<meta property="og:title" content="vue路由传参方式">
+<meta property="og:url" content="http://yoursite.com/2019/05/19/017-vue路由传参方式/index.html">
 <meta property="og:site_name" content="Mika的前端小窝">
-<meta property="og:description" content="边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距水平方向是不会发生重叠的情况  边距计算方法：全部为正值的情况，取值最大的有正有负的情况，分别取绝对值最大的求和都是负值的情况，取绝对值最大的，从零开始负向位移  解决方法 =&amp;gt; 触发BFCBFC：块级格式化上下文原理：1、 属于同一BFC的垂直方向会发生重叠，属于不同BFC的不会重叠2、 BFC的区域不会与浮">
+<meta property="og:description" content="摘要：vue 路由传参指的是，嵌套路由时，由父路由向子路由传递参数。传递参数主要有两种方式：query 传参；params 传参。params 传参存在两种形式，一是在 url 中显示参数，而是在 url 中不显示参数。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T15:00:52.987Z">
+<meta property="og:updated_time" content="2019-05-19T13:22:20.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="边距重叠问题">
-<meta name="twitter:description" content="边距重叠问题比邻的两个或多个普通流中的块元素在垂直方向上的外边距会合并为一个外边距水平方向是不会发生重叠的情况  边距计算方法：全部为正值的情况，取值最大的有正有负的情况，分别取绝对值最大的求和都是负值的情况，取绝对值最大的，从零开始负向位移  解决方法 =&amp;gt; 触发BFCBFC：块级格式化上下文原理：1、 属于同一BFC的垂直方向会发生重叠，属于不同BFC的不会重叠2、 BFC的区域不会与浮">
+<meta name="twitter:title" content="vue路由传参方式">
+<meta name="twitter:description" content="摘要：vue 路由传参指的是，嵌套路由时，由父路由向子路由传递参数。传递参数主要有两种方式：query 传参；params 传参。params 传参存在两种形式，一是在 url 中显示参数，而是在 url 中不显示参数。">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/22/坑-002-边距重叠问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/19/017-vue路由传参方式/">
 
 
 
 
 
-  <title>边距重叠问题 | Mika的前端小窝</title>
+  <title>vue路由传参方式 | Mika的前端小窝</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/坑-002-边距重叠问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/19/017-vue路由传参方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mika">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">边距重叠问题</h1>
+          <h1 class="post-title" itemprop="name headline">vue路由传参方式</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-22T19:55:55+08:00">
-                2019-04-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-19T20:34:52+08:00">
+                2019-05-19
               </time>
             
 
@@ -332,28 +332,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/坑/" itemprop="url" rel="index">
-                    <span itemprop="name">坑</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -362,8 +340,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/22/坑-002-边距重叠问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/22/坑-002-边距重叠问题/" itemprop="commentCount"></span>
+                <a href="/2019/05/19/017-vue路由传参方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/19/017-vue路由传参方式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  319
+                  657
                 </span>
               
 
@@ -406,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -427,19 +405,49 @@
       
 
       
-        <h2 id="边距重叠问题"><a href="#边距重叠问题" class="headerlink" title="边距重叠问题"></a>边距重叠问题</h2><p>比邻的两个或多个<strong>普通流</strong>中的<strong>块元素</strong>在<strong>垂直方向上</strong>的外边距会合并为一个外边距<br>水平方向是不会发生重叠的情况</p>
-<ul>
-<li><p>边距计算方法：<br>全部为正值的情况，取值最大的<br>有正有负的情况，分别取绝对值最大的求和<br>都是负值的情况，取绝对值最大的，从零开始负向位移</p>
-</li>
-<li><p>解决方法 =&gt; 触发BFC<br>BFC：块级格式化上下文<br><strong>原理：</strong><br>1、 属于同一BFC的垂直方向会发生重叠，属于不同BFC的不会重叠<br>2、 BFC的区域不会与浮动元素的box发生重叠<br>3、 BFC是页面上一个独立的容器，里面跟外面不会互相影响<br>4、 计算BFC高度时，浮动元素也参与计算<br><strong>触发条件</strong><br>1、 根元素<br>2、 float不为none<br>3、 position为<code>fixed</code>和<code>absolute</code><br>4、 overflow为<code>hidden</code>和<code>auto</code><br>5、 display为<code>inline-block</code>、<code>table-cell</code>、<code>flex</code>、<code>inline-flex</code></p>
-</li>
+        <p><strong>摘要：</strong>vue 路由传参指的是，嵌套路由时，由父路由向子路由传递参数。传递参数主要有两种方式：query 传参；params 传参。params 传参存在两种形式，一是在 url 中显示参数，而是在 url 中不显示参数。</p>
+<a id="more"></a>
+<h2 id="query-传参方式"><a href="#query-传参方式" class="headerlink" title="query 传参方式"></a>query 传参方式</h2><ul>
+<li>定义路由<br>router –&gt; index.js</li>
 </ul>
-<p>补充：BFC使用场景<br>1、 自适应两栏布局</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.aside</span>&#123;<span class="attribute">float</span>:left;&#125;</span><br><span class="line"><span class="selector-class">.main</span>&#123;<span class="attribute">overflow</span>:hidden;&#125;</span><br></pre></td></tr></table></figure>
-<p>2、清除浮动</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;<span class="attribute">overflow</span>:hidden;&#125;</span><br><span class="line"><span class="selector-class">.child</span>&#123;<span class="attribute">float</span>:left;&#125;</span><br></pre></td></tr></table></figure>
-<p>3、防止垂直边距重叠</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">div&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue</span></span><br><span class="line"><span class="string">import Router from '</span>vue-router<span class="string">'</span></span><br><span class="line"><span class="string">import Parent from '</span>components/parent/parent<span class="string">'</span></span><br><span class="line"><span class="string">import Child from '</span>components/child/child<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Vue.use(Router)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default new Router(&#123;</span></span><br><span class="line"><span class="string">  routes:[</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">      path: '</span>/parent<span class="string">',</span></span><br><span class="line"><span class="string">      name: '</span>parent<span class="string">',</span></span><br><span class="line"><span class="string">      component: Parent,</span></span><br><span class="line"><span class="string">      children: [</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">          path: '</span>/parent/child/<span class="string">',</span></span><br><span class="line"><span class="string">          name: '</span>child<span class="string">',</span></span><br><span class="line"><span class="string">          component: Child</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改父组件中路由导航<br>router-link 用来进行路由导航，router-view 用来进行路由页面渲染<br><code>&lt;router-link :to=&quot;{path:&#39;/parent/child&#39;,query:{id:001}}&quot;&gt;</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- parent.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;path:'parent/child',query:&#123;id:001&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>子组件获取参数<br><code>this.$route.query.id</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;this.$route.query.id&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="params-传递参数-url-中显示"><a href="#params-传递参数-url-中显示" class="headerlink" title="params 传递参数(url 中显示)"></a>params 传递参数(url 中显示)</h2><ul>
+<li>定义路由<br>router –&gt; index.js</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue</span></span><br><span class="line"><span class="string">import Router from '</span>vue-router<span class="string">'</span></span><br><span class="line"><span class="string">import Parent from '</span>components/parent/parent<span class="string">'</span></span><br><span class="line"><span class="string">import Child from '</span>components/child/child<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Vue.use(Router)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default new Router(&#123;</span></span><br><span class="line"><span class="string">  routes:[</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">      path: '</span>/parent<span class="string">',</span></span><br><span class="line"><span class="string">      name: '</span>parent<span class="string">',</span></span><br><span class="line"><span class="string">      component: Parent,</span></span><br><span class="line"><span class="string">      children: [</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">          path: '</span>/parent/child/:id<span class="string">',</span></span><br><span class="line"><span class="string">          name: '</span>child<span class="string">',</span></span><br><span class="line"><span class="string">          component: Child</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>父组件修改路由导航<br><code>&lt;router-link to=&quot;/parent/child/001&quot;&gt;</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/parent/child/001"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>子组件获取参数<br><code>this.$route.params.id</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;this.$route.params.id&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>将参数暴露在 url 中存在安全问题，如 XSS 攻击</strong></p>
+<h2 id="params-传递参数-url-中不显示"><a href="#params-传递参数-url-中不显示" class="headerlink" title="params 传递参数(url 中不显示)"></a>params 传递参数(url 中不显示)</h2><p>通过路由的名字 name 来实现</p>
+<ul>
+<li>定义路由<br>router –&gt; index.js</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue</span></span><br><span class="line"><span class="string">import Router from '</span>vue-router<span class="string">'</span></span><br><span class="line"><span class="string">import Parent from '</span>components/parent/parent<span class="string">'</span></span><br><span class="line"><span class="string">import Child from '</span>components/child/child<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Vue.use(Router)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default new Router(&#123;</span></span><br><span class="line"><span class="string">  routes:[</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">      path: '</span>/parent<span class="string">',</span></span><br><span class="line"><span class="string">      name: '</span>parent<span class="string">',</span></span><br><span class="line"><span class="string">      component: Parent,</span></span><br><span class="line"><span class="string">      children: [</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">          path: '</span>/parent/child/<span class="string">',</span></span><br><span class="line"><span class="string">          name: '</span>child<span class="string">',</span></span><br><span class="line"><span class="string">          component: Child</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>父组件修改路由导航<br><code>&lt;router-link to=&quot;/parent/child/001&quot;&gt;</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name:'child',params:&#123;id:001&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>子组件获取参数<br><code>this.$route.params.id</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;this.$route.params.id&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>不在 url 中显示这种方式，在页面舒心的时候，传递的值会丢失</strong></p>
+<p>更多详情参考<a href="https://router.vuejs.org/zh/guide/essentials/navigation.html" target="_blank" rel="noopener">VUE 官方文档</a></p>
+
       
     </div>
     
@@ -456,7 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/坑/" rel="tag"><i class="fa f-fw fa-tags"></i> 坑</a>
+            <a href="/tags/Vue/" rel="tag"><i class="fa f-fw fa-tags"></i> Vue</a>
           
         </div>
       
@@ -469,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/22/坑-001-CSS百分比/" rel="next" title="CSS百分比参照">
-                <i class="fa fa-chevron-left"></i> CSS百分比参照
+              <a href="/2019/05/15/DS-001-二叉树遍历/" rel="next" title="JS实现二叉树">
+                <i class="fa fa-chevron-left"></i> JS实现二叉树
               </a>
             
           </div>
@@ -478,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/24/011-性能优化小结/" rel="prev" title="前端性能优化小结">
-                前端性能优化小结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#边距重叠问题"><span class="nav-number">1.</span> <span class="nav-text">边距重叠问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#query-传参方式"><span class="nav-number">1.</span> <span class="nav-text">query 传参方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#params-传递参数-url-中显示"><span class="nav-number">2.</span> <span class="nav-text">params 传递参数(url 中显示)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#params-传递参数-url-中不显示"><span class="nav-number">3.</span> <span class="nav-text">params 传递参数(url 中不显示)</span></a></li></ol></div>
             
 
           </div>
